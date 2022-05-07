@@ -64,6 +64,21 @@ module.exports = (env, argv) => {
   dotenv.config({ path: ".env" });
   dotenv.config({ path: ".defaults.env" });
 
+if (env.prod) {
+  const your_domain = "hubs.metagascar.com";
+  Object.assign(process.env, {
+    HOST: your_domain,
+    RETICULUM_SOCKET_SERVER: your_domain,
+    CORS_PROXY_SERVER: "hubs-proxy.com",
+    NON_CORS_PROXY_DOMAINS: `${your_domain},dev.reticulum.io`,
+    BASE_ASSETS_PATH: `https://${your_domain}:8989/`,
+    RETICULUM_SERVER: your_domain,
+    POSTGREST_SERVER: "",
+    ITA_SERVER: "",
+    HOST_IP: your_domain,
+  });
+}
+  
   if (env.local) {
     Object.assign(process.env, {
       HOST: "hubs.local",
