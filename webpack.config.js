@@ -234,7 +234,28 @@ module.exports = async (env, argv) => {
       });
     }
   }
+if (argv.mode === "production") {
+  if (env.prodVps) {
+    // Production on VPS
+    const your_domain = "hubs.metagascar.com";
+    
+    // We dont use the reticulum port 4000 because later we will proxy pass from port 443 to 4000
 
+    Object.assign(process.env, {
+      HOST_IP: your_domain,
+      SHORTLINK_DOMAIN: `${your_domain}`,
+      HOST: your_domain,
+      RETICULUM_SOCKET_SERVER: your_domain,
+      CORS_PROXY_SERVER: `${your_domain}`,
+      NON_CORS_PROXY_DOMAINS: `${your_domain},dev.reticulum.io`,
+      BASE_ASSETS_PATH: `https://${your_domain}:8080/`,
+      RETICULUM_SERVER: your_domain,
+      POSTGREST_SERVER: "",
+      ITA_SERVER: "",
+      UPLOADS_HOST: `https://${your_domain}`,
+    });
+  }
+}
   // In production, the environment variables are defined in CI or loaded from ita and
   // the app config is injected into the head of the page by Reticulum.
 
