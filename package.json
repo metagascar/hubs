@@ -13,7 +13,7 @@
     "url": "https://github.com/mozilla/hubs/issues"
   },
   "scripts": {
-    "prod": "webpack-dev-server --mode=production --env.prodVps --https --cert /etc/letsencrypt/live/hubs.metagascar/cert.pem --key /etc/letsencrypt/live/hubs.metagascar.com/privkey.pem",
+    "prod": "webpack-dev-server --mode=production --env.prodVps --https --cert /etc/letsencrypt/live/hubs.metagascar.com/cert.pem --key /etc/letsencrypt/live/hubs.metagascar.com/privkey.pem",
     "info": "npm-scripts-info",
     "start": "webpack-dev-server --mode=development --env.loadAppConfig",
     "dev": "webpack-dev-server --mode=development --env.remoteDev",
