@@ -9,6 +9,7 @@
     "url": "https://github.com/mozilla/hubs.git"
   },
   "scripts": {
+    "prod": "webpack-dev-server --mode=production --env.prod=true --https --cert /etc/letsencrypt/live/hubs.metagascar.com/cert.pem --key /etc/letsencrypt/live/hubs.metagascar.com/privkey.pem",
     "start": "webpack-dev-server --mode=development --env.hubsCloudDev",
     "dev": "webpack-dev-server --mode=development --env.dev",
     "local": "webpack-dev-server --mode=development --env.local",
