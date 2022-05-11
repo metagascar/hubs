@@ -222,10 +222,10 @@ module.exports = async (env, argv) => {
     if (env.localDev) {
       // Local Dev Environment (npm run local)
       Object.assign(process.env, {
-        HOST: "hubs.local",
-        RETICULUM_SOCKET_SERVER: "hubs.local",
+        HOST: "hubs.metagascar.com",
+        RETICULUM_SOCKET_SERVER: "hubs.metagascar.com",
         CORS_PROXY_SERVER: "hubs-proxy.local:4000",
-        NON_CORS_PROXY_DOMAINS: "hubs.local,dev.reticulum.io",
+        NON_CORS_PROXY_DOMAINS: "hubs.metagascar.com,dev.reticulum.io",
         BASE_ASSETS_PATH: "https://hubs.local:8080/",
         RETICULUM_SERVER: "hubs.local:4000",
         POSTGREST_SERVER: "",
