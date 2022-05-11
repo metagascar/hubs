@@ -226,11 +226,11 @@ module.exports = async (env, argv) => {
         RETICULUM_SOCKET_SERVER: "hubs.metagascar.com",
         CORS_PROXY_SERVER: "hubs-proxy.local:4000",
         NON_CORS_PROXY_DOMAINS: "hubs.metagascar.com,dev.reticulum.io",
-        BASE_ASSETS_PATH: "https://hubs.local:8080/",
-        RETICULUM_SERVER: "hubs.local:4000",
+        BASE_ASSETS_PATH: "https://hubs.metagascar.com:8080/",
+        RETICULUM_SERVER: "hubs.metagascar.com:4000",
         POSTGREST_SERVER: "",
         ITA_SERVER: "",
-        UPLOADS_HOST: "https://hubs.local:4000"
+        UPLOADS_HOST: "https://hubs.metagascar.com:4000"
       });
     }
   }
