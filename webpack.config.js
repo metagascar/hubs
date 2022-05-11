@@ -43,7 +43,7 @@ function createHTTPSConfig() {
               },
               {
                 type: 2,
-                value: "hubs.local"
+                value: "hubs.metagascar.com"
               }
             ]
           }
@@ -185,7 +185,7 @@ async function fetchAppConfigAndEnvironmentVars() {
   process.env.SHORTLINK_DOMAIN = shortlink_domain;
   process.env.CORS_PROXY_SERVER = `${localIp}:8080/cors-proxy`;
   process.env.THUMBNAIL_SERVER = thumbnail_server;
-  process.env.NON_CORS_PROXY_DOMAINS = `${localIp},hubs.local,localhost`;
+  process.env.NON_CORS_PROXY_DOMAINS = `${localIp},hubs.metagascar.com,localhost`;
 
   return appConfig;
 }
@@ -259,7 +259,7 @@ if (argv.mode === "production") {
   // In production, the environment variables are defined in CI or loaded from ita and
   // the app config is injected into the head of the page by Reticulum.
 
-  const host = process.env.HOST_IP || env.localDev || env.remoteDev ? "hubs.local" : "localhost";
+  const host = process.env.HOST_IP || env.localDev || env.remoteDev ? "hubs.metagascar.com" : "localhost";
 
   const liveReload = !!process.env.LIVE_RELOAD || false;
 
@@ -317,7 +317,7 @@ if (argv.mode === "production") {
       host: "0.0.0.0",
       public: `${host}:8080`,
       useLocalIp: true,
-      allowedHosts: [host, "hubs.local"],
+      allowedHosts: [host, "hubs.metagascar.com"],
       headers: devServerHeaders,
       hot: liveReload,
       inline: liveReload,
